@@ -36,5 +36,10 @@ namespace mpSemana6
         {
             Navigation.PushAsync(new MainPage()); 
         }
+
+        private void lista_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }

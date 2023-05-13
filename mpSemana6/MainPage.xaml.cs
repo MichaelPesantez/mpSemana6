@@ -22,6 +22,8 @@ namespace mpSemana6
 
         private void btnConsultar_Clicked(object sender, EventArgs e)
         {
+            var mensaje = "BIENVENIDO";
+            DependencyService.Get<Mensaje>().longAlert(mensaje);
             Navigation.PushAsync(new Consultar());
         }
     }
