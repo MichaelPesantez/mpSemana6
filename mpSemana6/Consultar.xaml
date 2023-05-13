@@ -24,7 +24,7 @@
 
             <Label Text="--------------------------------------------------------------------------------------------------"/>
 
-            <ListView x:Name="lista">
+            <ListView x:Name="lista" ItemSelected="lista_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -40,7 +40,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
           
-                                <Label x:Name="lblId" Text="{Binding codigo}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="lblCodigo" Text="{Binding codigo}" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
                                 <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
                                 <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
                                 <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>

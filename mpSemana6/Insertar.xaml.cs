@@ -16,6 +16,8 @@ namespace mpSemana6
         public Insertar()
         {
             InitializeComponent();
+
+
         }
 
         private void btnInsertar_Clicked(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using mpSemana6.WS;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,7 +40,11 @@ namespace mpSemana6
 
         private void lista_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            string codigo = (e.SelectedItem as Datos).codigo.ToString();
+            string nombre = (e.SelectedItem as Datos).nombre;
+            string apellido = (e.SelectedItem as Datos).apellido;
+            string edad = (e.SelectedItem as Datos).edad.ToString();
+            Navigation.PushAsync(new Editar(codigo, nombre, apellido, edad));
         }
     }
 }
