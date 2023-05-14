@@ -39,12 +39,28 @@ namespace mpSemana6
             }
             catch(Exception ex) 
             {
-                DisplayAlert("ALERTA", ex.Message, "Cerrar");
+                await DisplayAlert("ALERTA", ex.Message, "Cerrar");
             }
         }
-        private void btnEliminar_Clicked(object sender, EventArgs e)
+        private async void btnEliminar_Clicked(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (await DisplayAlert("Confirmacion", "Esta Seguro de Eliminar los Datos", "SI", "NO"))
+                {
+                    WebClient cliente = new WebClient();
+                    var parametros = new System.Collections.Specialized.NameValueCollection();
+                    cliente.UploadValues("http://192.168.27.104/moviles/post.php?codigo="+txtCodigo.Text, "DELETE", parametros);
+
+                    await Navigation.PushAsync(new Consultar());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("ALERTA", ex.Message, "Cerrar");
+            }
         }
     }
 }
